@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -17,13 +18,16 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Department {
-   @Id
-   @GeneratedValue()
+    @Id
+    @GeneratedValue()
     private UUID id;
+    @NotBlank
     @Column(nullable = false)
     private String name;
+    @NotBlank
     @Column(nullable = false)
     private String address;
+    @NotBlank
     @Column(nullable = false)
     private String code;
 

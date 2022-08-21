@@ -3,8 +3,8 @@ package com.example.demo.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController()
@@ -14,7 +14,7 @@ public class DepartmentController {
     private DepartmentServiceInterface departmentServiceInterface;
 
     @PostMapping
-    public Department createDepartment(@RequestBody Department department) {
+    public Department createDepartment(@Valid @RequestBody Department department) {
         return departmentServiceInterface.createDepartment(department);
     }
 
